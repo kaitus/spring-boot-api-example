@@ -25,7 +25,7 @@ pipeline {
         }
 	stage('run') {
             steps { //run application
-                bat 'gradlew run'
+                bat 'gradlew assemble docker dockerRun'
             }
         }
     }
