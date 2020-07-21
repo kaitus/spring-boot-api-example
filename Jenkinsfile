@@ -8,13 +8,23 @@ pipeline {
                 git 'https://github.com/kaitus/spring-boot-api-example.git'
             }
         }
-		stage('compile') {
-            steps { //Compile
+	stage('compile') {
+            steps { //Compile application
                 bat 'gradlew assemble'
             }
         }
+	stage('deploy') {
+            steps { //build application
+                bat 'gradlew build'
+            }
+        }
+	stage('run') {
+            steps { //run application
+                bat 'gradlew run'
+            }
+        }
         
-		stage('Test') {
+	stage('Test') {
             steps {
                 bat 'gradlew test'
             }
