@@ -18,12 +18,12 @@ pipeline {
                 bat 'gradlew test'
             }
         }
-	stage('deploy') {
+	stage('build') {
             steps { //build application
                 bat 'gradlew build'
             }
         }
-	stage('run') {
+	stage('deploy') {
             steps { //run application
                 bat 'gradlew assemble docker dockerRun'
             }
