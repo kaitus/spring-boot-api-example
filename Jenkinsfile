@@ -1,16 +1,20 @@
 pipeline {
+
     agent any
 
-    triggers {
-        pollSCM '* * * * *'
-    }
     stages {
-        stage('Build') {
-            steps {
+        stage('Checkout') {
+            steps { //Checking out the repo
+                git 'https://github.com/kaitus/spring-boot-api-example.git'
+            }
+        }
+		stage('compile') {
+            steps { //Compile
                 sh './gradlew assemble'
             }
         }
-        stage('Test') {
+        
+		stage('Test') {
             steps {
                 sh './gradlew test'
             }
