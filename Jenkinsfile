@@ -13,6 +13,11 @@ pipeline {
                 bat 'gradlew assemble'
             }
         }
+	stage('Test') {
+            steps {
+                bat 'gradlew test'
+            }
+        }
 	stage('deploy') {
             steps { //build application
                 bat 'gradlew build'
@@ -21,12 +26,6 @@ pipeline {
 	stage('run') {
             steps { //run application
                 bat 'gradlew run'
-            }
-        }
-        
-	stage('Test') {
-            steps {
-                bat 'gradlew test'
             }
         }
     }
