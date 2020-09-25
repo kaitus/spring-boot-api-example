@@ -9,7 +9,7 @@ plugins {
 }
 
 version = scmVersion.version
-sourceCompatibility = 8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
