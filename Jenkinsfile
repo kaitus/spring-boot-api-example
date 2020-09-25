@@ -29,7 +29,8 @@ pipeline {
 	stage('deploy') {
             steps { //run application
                 //bat 'gradlew assemble docker dockerRun'
-		sh './gradlew assemble docker dockerRun'
+		//sh './gradlew assemble docker dockerRun'
+		sh './gradlew docker'
             }
         }
     }
