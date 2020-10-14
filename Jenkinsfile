@@ -10,26 +10,26 @@ pipeline {
         }
 	stage('compile') {
             steps { //Compile application
-                //bat 'gradlew assemble'
-		sh './gradlew assemble'
+                bat 'gradlew assemble'
+		//sh './gradlew assemble'
             }
         }
 	stage('Test') {
             steps {
-                //bat 'gradlew test'
-		sh './gradlew test'
+                bat 'gradlew test'
+		//sh './gradlew test'
             }
         }
 	stage('build') {
             steps { //build application
-                //bat 'gradlew build'
-		sh './gradlew build'
+                bat 'gradlew build'
+		//sh './gradlew build'
             }
         }
 	stage('deploy') {
             steps { //run application
-                //bat 'gradlew assemble docker dockerRun'
-		sh './gradlew assemble docker dockerRun'
+                bat 'gradlew assemble docker dockerRun'
+		//sh './gradlew assemble docker dockerRun'
 		//sh './gradlew docker'
             }
         }
